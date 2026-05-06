@@ -1,0 +1,22 @@
+# PollenWatch
+
+> Real-time pollen monitoring app that shows severity scores, pollen types, and health recommendations for any location.
+
+## About
+PollenWatch is a web application that provides real-time and forecasted pollen data. Users can search by city or zip code to see current pollen severity, breakdown by type (Tree, Grass, Weed), and individual plant species data. It also provides health recommendations based on current pollen levels.
+
+## Features
+- Real-time pollen severity gauge (0-5 scale)
+- Detailed breakdown of Tree, Grass, and Weed pollen levels
+- Information on specific plant species triggering allergies, including cross-reaction data
+- 5-day pollen forecasts
+- Contextual health recommendations
+
+## Technology
+- Frontend: HTML, CSS, JavaScript (Vite)
+- APIs: Google Pollen API, OpenStreetMap Nominatim
+
+## Use Cases
+- Check daily pollen levels to plan outdoor activities.
+- Identify specific plants causing allergies in a particular area.
+- Get advice on managing allergy symptoms based on local conditions.

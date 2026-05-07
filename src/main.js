@@ -31,9 +31,10 @@ let activeIndex = -1;
 let autocompleteResults = [];
 
 // ===== Init particles =====
-function createParticles() {
+function createParticles(count) {
   const container = document.getElementById('particles');
-  for (let i = 0; i < 20; i++) {
+  container.innerHTML = ''; // clear existing
+  for (let i = 0; i < count; i++) {
     const p = document.createElement('div');
     p.className = 'particle';
     p.style.left = Math.random() * 100 + '%';
@@ -43,7 +44,7 @@ function createParticles() {
     container.appendChild(p);
   }
 }
-createParticles();
+createParticles(20);
 
 // ===== Theme toggle =====
 function initTheme() {
@@ -204,6 +205,10 @@ function renderAll(location, data) {
   // Severity gauge (max UPI across pollen types)
   const maxUpi = Math.max(...today.pollenTypeInfo.map(t => t.indexInfo?.value ?? 0));
   renderGauge(maxUpi);
+  
+  // Update particles based on severity
+  const particleCounts = [5, 10, 20, 50, 100, 200];
+  createParticles(particleCounts[maxUpi] || 20);
 
   // Pollen type cards
   renderPollenTypes(today.pollenTypeInfo);

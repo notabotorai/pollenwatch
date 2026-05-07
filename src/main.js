@@ -47,12 +47,20 @@ function createParticles(count) {
 createParticles(20);
 
 // ===== Theme toggle =====
+function updateThemeColorMeta(theme) {
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) {
+    meta.setAttribute('content', theme === 'dark' ? '#0a0e1a' : '#f0f4f8');
+  }
+}
+
 function initTheme() {
   const saved = localStorage.getItem('pollenwatch-theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const theme = saved || (prefersDark ? 'dark' : 'light');
   document.documentElement.setAttribute('data-theme', theme);
   themeIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
+  updateThemeColorMeta(theme);
 }
 initTheme();
 
@@ -62,6 +70,7 @@ themeToggle.addEventListener('click', () => {
   document.documentElement.setAttribute('data-theme', next);
   localStorage.setItem('pollenwatch-theme', next);
   themeIcon.textContent = next === 'dark' ? '🌙' : '☀️';
+  updateThemeColorMeta(next);
 });
 
 // ===== Suggestion chips =====

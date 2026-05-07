@@ -4,8 +4,8 @@
   "description": "Monitor pollen levels in your city with 5-day forecasts and health recommendations.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#121212",
-  "theme_color": "#863bff",
+  "background_color": "#0a0e1a",
+  "theme_color": "#0a0e1a",
   "icons": [
     {
       "src": "/favicon.svg",
